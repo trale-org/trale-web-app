@@ -9,6 +9,7 @@ export class SettingsMenuItemComponent implements OnInit {
 
   @Input() name: string | undefined;
   @Input() icon: string | undefined;
+  @Input() color: string | undefined;
 
   constructor() { }
 
