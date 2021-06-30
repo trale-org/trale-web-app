@@ -14,8 +14,8 @@
       </div>
 
       <!-- QR Code Button -->
-      <div style="margin-left: 15px; width: 30px; min-width: 30px; height: 30px; background-color: #4dc71f;">
-
+      <div style="margin-left: 15px; width: 30px; min-width: 35px; height: 35px; background-color: #191A1C; border-radius: 35px;">
+        <img src="assets/icons/qr.svg" alt="Icon not found" style="height: 32px;">
       </div>
     </div>
   </div>
@@ -23,9 +23,22 @@
   <!-- SPACER -->
   <div class="row settings-spacer"></div>
 
-  <app-settings-menu-item [name]="'Starred messages'" [icon]="'star'"></app-settings-menu-item>
-  <app-settings-menu-item [name]="'Linked devices'" [icon]="'star'"></app-settings-menu-item>
+  <app-settings-menu-item [name]="'Starred messages'" [icon]="'star'" color="#FF9900"></app-settings-menu-item>
+  <app-settings-menu-item [name]="'Linked devices'" [icon]="'star'" color="#00D387"></app-settings-menu-item>
 
+  <!-- SPACER -->
+  <div class="row settings-spacer"></div>
+
+  <app-settings-menu-item [name]="'Account'" [icon]="'key'" color="#4086EE"></app-settings-menu-item>
+  <app-settings-menu-item [name]="'Data and storage'" [icon]="'storage'" color="#A140EE"></app-settings-menu-item>
+  <app-settings-menu-item [name]="'Privacy'" [icon]="'shield'" color="#EE40A8"></app-settings-menu-item>
+
+  <!-- SPACER -->
+  <div class="row settings-spacer"></div>
+
+  <app-settings-menu-item [name]="'Help'" [icon]="'star'" color="#4340EE"></app-settings-menu-item>
+  <app-settings-menu-item [name]="'Tell a friend'" [icon]="'heart'" color="#FF0000"></app-settings-menu-item>
+  <app-settings-menu-item [name]="'Source code'" [icon]="'github'" color="#464646"></app-settings-menu-item>
 
   <!-- TODO add menu items  101112 -->
 </div>
