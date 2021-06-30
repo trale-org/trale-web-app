@@ -4,8 +4,12 @@
     style="height: 50px; width: 100%; background-color: #101112;"
   >
     <!-- Icon -->
-    <div style="height: 35px; width: 35px; background-color: teal; border-radius: 5px;">
-
+    <div
+      style="height: 35px; width: 35px; background-color: teal; border-radius: 5px;"
+      [ngStyle]="{'background-color': color}"
+      class="d-flex justify-content-center align-items-center"
+    >
+      <img [src]="'assets/icons/' + icon + '.svg'" alt="Icon not found" style="height: 25px;">
     </div>
 
     <!-- Name -->
