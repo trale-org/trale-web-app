@@ -1,0 +1,37 @@
+@import 'src/assets/styles/colors';
+
+.selection-item {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: var(--background-item);
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.selection-item:hover {
+  cursor: pointer;
+  border: 1px solid var(--accent-color);
+}
+
+.selection-item .headline {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.selection-item .sub-headline {
+  font-size: 12px;
+}
+
+.selection-item .description {
+  font-size: 14px;
+}
+
+.selection-item .recommended {
+  position: absolute;
+  right: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+

@@ -1,0 +1,19 @@
+<div class="selection-item" [ngStyle]="{'border-color': selected ? 'var(--accent-color)' : (!selected ? 'transparent' : null) }">
+
+  <div *ngIf="recommended" style="position: relative;">
+    <span class="recommended">
+      recommended
+    </span>
+  </div>
+
+  <div style="width: 100%;">
+    <span class="headline">{{headline}}</span>
+  </div>
+  <div style="width: 100%;">
+    <span class="sub-headline">{{subHeadline}}</span>
+  </div>
+  <div style="width: 100%;">
+    <span class="description">{{description}}</span>
+  </div>
+
+</div>
