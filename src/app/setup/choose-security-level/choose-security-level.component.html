@@ -1,0 +1,48 @@
+<div class="container"
+     style="background-color: var(--background-color); min-height: 100vh;"
+
+>
+
+  <div class="row">
+    <div class="col-sm-12" style="margin-top: 20px;">
+      <span class="setup-headline">Choose your security level</span>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-sm-12"
+         style="margin-top: 20px;"
+    ><!-- SPACER --></div>
+
+    <app-selection-item
+      *ngFor="let securityLevel of securityLevels"
+      [headline]="securityLevel.headline"
+      [subHeadline]="securityLevel.subHeadline"
+      [description]="securityLevel.description"
+      [recommended]="securityLevel.recommended"
+      [selected]="securityLevel.selected"
+      (click)="updateSelection(securityLevel)"
+    ></app-selection-item>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 d-flex justify-content-center">
+      <button class="trale-btn"
+              style="margin-right: 10px;"
+              (click)="navigateSetupIndex()"
+      >
+        <-
+      </button>
+      <!-- TODO add navigation function name if next step is known -->
+      <button class="trale-btn-accent"
+              style="margin-left: 10px;"
+      >
+        ->
+      </button>
+    </div>
+  </div>
+
+</div>
