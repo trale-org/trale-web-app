@@ -14,7 +14,7 @@ export class ChooseSecurityLevelComponent implements OnInit {
       descriptive: 'opt-seclev-adv',
       headline: 'Advanced Security',
       subHeadline: 'Strong security, great performance',
-      description: 'Default encryption, delivery receipts, read receipts, lorem ipsum dolor sit amet et.',
+      description: 'Default encryption, message delivery over clear-net, delivery receipts, read receipts. Best option for casual users who want strong security.',
       recommended: false,
       selected: false,
     },
@@ -22,7 +22,7 @@ export class ChooseSecurityLevelComponent implements OnInit {
       descriptive: 'opt-seclev-max',
       headline: 'Maximum Security',
       subHeadline: 'Best security, slower performance',
-      description: 'Advanced encryption, message distribution over onion netwerk, lorem ipsum dolor sit amet et.',
+      description: 'Advanced encryption, message distribution over onion network. Best option for all users who want maximum security and protection against governments, public institutions, law enforcement and others.',
       recommended: true,
       selected: false,
     },
@@ -30,12 +30,14 @@ export class ChooseSecurityLevelComponent implements OnInit {
       descriptive: 'opt-seclev-cus',
       headline: 'Custom Security',
       subHeadline: 'Custom',
-      description: 'Lorem ipsum dolor sit amet et.',
+      description: 'Customize Trale to your needs by choosing each security option by yourself. Recommended only for IT specialists who are familiar with IT security, encryption, network protocols and data protection.',
       recommended: false,
       selected: false,
+      flex: true,
     }
+  ];
 
-  ]
+  public selectedSecurityLevel!: Selectable;
 
   constructor(
     private router: Router,
@@ -50,6 +52,7 @@ export class ChooseSecurityLevelComponent implements OnInit {
    * @param selectedOption - The selected security level.
    */
   public updateSelection(selectedOption: Selectable) {
+    this.selectedSecurityLevel = selectedOption;
     selectedOption.selected = true;
     this.securityLevels = this.securityLevels.map(x => {
       x.selected = false;
@@ -66,6 +69,17 @@ export class ChooseSecurityLevelComponent implements OnInit {
    */
   public async navigateSetupIndex() {
     await this.router.navigateByUrl('setup');
+  }
+
+  public async navigateNextStep() {
+    console.log(this.selectedSecurityLevel);
+
+    if (this.selectedSecurityLevel.descriptive === 'opt-seclev-cus') {
+      await this.router.navigateByUrl('setup/custom/connection-type');
+    } else {
+      // TODO redirect to setup complete
+      await this.router.navigateByUrl('/');
+    }
   }
 
 }
