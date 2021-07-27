@@ -13,3 +13,11 @@
   color: var(--background-item);
   background-color: var(--accent-color);
 }
+
+.trale-btn-accent:disabled {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--text-color-disabled);
+  background-color: var(--background-item);
+}
