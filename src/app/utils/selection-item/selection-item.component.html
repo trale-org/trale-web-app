@@ -1,19 +1,22 @@
-<div class="selection-item" [ngStyle]="{'border-color': selected ? 'var(--accent-color)' : (!selected ? 'transparent' : null) }">
+<div class="selection-item"
+     [ngStyle]="{'border-color': selectable.selected ? 'var(--accent-color)' : (!selectable.selected ? 'transparent' : null) }"
+     (click)="onOptionSelected.emit(selectable)"
+>
 
-  <div *ngIf="recommended" style="position: relative;">
+  <div *ngIf="selectable.recommended" style="position: relative;">
     <span class="recommended">
       recommended
     </span>
   </div>
 
   <div style="width: 100%;">
-    <span class="headline">{{headline}}</span>
+    <span class="headline">{{selectable.headline}}</span>
   </div>
   <div style="width: 100%;">
-    <span class="sub-headline">{{subHeadline}}</span>
+    <span class="sub-headline">{{selectable.subHeadline}}</span>
   </div>
   <div style="width: 100%;">
-    <span class="description">{{description}}</span>
+    <span class="description">{{selectable.description}}</span>
   </div>
 
 </div>

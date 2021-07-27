@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Selectable} from "../../../models/Selectable";
 
 @Component({
   selector: 'app-selection-item',
@@ -7,13 +8,12 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SelectionItemComponent implements OnInit {
 
-  @Input() headline!: string;
-  @Input() subHeadline!: string;
-  @Input() description!: string;
-  @Input() recommended!: boolean;
-  @Input() selected!: boolean;
+  @Input() selectable!: Selectable;
 
-  constructor() { }
+  @Output() onOptionSelected = new EventEmitter<Selectable>();
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
