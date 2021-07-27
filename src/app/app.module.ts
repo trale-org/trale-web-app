@@ -6,12 +6,16 @@ import {AppComponent}     from './app.component';
 import {HeaderComponent}  from './utils/header/header.component';
 import {SettingsModule}   from "./settings/settings.module";
 import { WelcomeComponent } from './welcome-stepper/welcome/welcome.component';
+import { SelectionItemComponent } from './utils/selection-item/selection-item.component';
+import { ChooseSecurityLevelComponent } from './setup/choose-security-level/choose-security-level.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    SelectionItemComponent,
+    ChooseSecurityLevelComponent,
   ],
   imports:      [
     BrowserModule,

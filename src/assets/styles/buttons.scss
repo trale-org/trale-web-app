@@ -1,20 +1,15 @@
-.btn-trale {
-  background-color: #1BD9BD;
-  color: #101112;
-  padding: 10px 20px;
+.trale-btn {
   border: none;
   border-radius: 5px;
-}
-
-.btn-trale:disabled {
-  background-color: #101112;
-  color: #747474;
-}
-
-.btn-trale-dark {
-  background-color: #101112;
-  color: #ffffff;
   padding: 10px 20px;
+  color: var(--text-color);
+  background-color: var(--background-item);
+}
+
+.trale-btn-accent {
   border: none;
   border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--background-item);
+  background-color: var(--accent-color);
 }
