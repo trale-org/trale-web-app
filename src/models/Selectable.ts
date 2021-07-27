@@ -6,4 +6,5 @@ export interface Selectable {
   subHeadline: string;
   description: string;
   recommended: boolean;
+  flex?: boolean;
 }
