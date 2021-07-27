@@ -8,6 +8,7 @@ import {SettingsModule}   from "./settings/settings.module";
 import { WelcomeComponent } from './welcome-stepper/welcome/welcome.component';
 import { SelectionItemComponent } from './utils/selection-item/selection-item.component';
 import { ChooseSecurityLevelComponent } from './setup/choose-security-level/choose-security-level.component';
+import { ChooseConnectionTypeComponent } from './setup/custom/choose-connection-type/choose-connection-type.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ChooseSecurityLevelComponent } from './setup/choose-security-level/choo
     WelcomeComponent,
     SelectionItemComponent,
     ChooseSecurityLevelComponent,
+    ChooseConnectionTypeComponent,
   ],
   imports:      [
     BrowserModule,
