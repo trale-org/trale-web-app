@@ -18,12 +18,8 @@
 
     <app-selection-item
       *ngFor="let securityLevel of securityLevels"
-      [headline]="securityLevel.headline"
-      [subHeadline]="securityLevel.subHeadline"
-      [description]="securityLevel.description"
-      [recommended]="securityLevel.recommended"
-      [selected]="securityLevel.selected"
-      (click)="updateSelection(securityLevel)"
+      [selectable]="securityLevel"
+      (onOptionSelected)="updateSelection($event)"
     ></app-selection-item>
 
   </div>

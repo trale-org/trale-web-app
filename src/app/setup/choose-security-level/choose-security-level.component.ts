@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {SecurityLevel} from "../../../models/SecurityLevel";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {Selectable} from '../../../models/Selectable';
 
 @Component({
   selector: 'app-choose-security-level',
@@ -9,8 +9,9 @@ import {Router} from "@angular/router";
 })
 export class ChooseSecurityLevelComponent implements OnInit {
 
-  public securityLevels: SecurityLevel[] = [
+  public securityLevels: Selectable[] = [
     {
+      descriptive: 'opt-seclev-adv',
       headline: 'Advanced Security',
       subHeadline: 'Strong security, great performance',
       description: 'Default encryption, delivery receipts, read receipts, lorem ipsum dolor sit amet et.',
@@ -18,6 +19,7 @@ export class ChooseSecurityLevelComponent implements OnInit {
       selected: false,
     },
     {
+      descriptive: 'opt-seclev-max',
       headline: 'Maximum Security',
       subHeadline: 'Best security, slower performance',
       description: 'Advanced encryption, message distribution over onion netwerk, lorem ipsum dolor sit amet et.',
@@ -25,6 +27,7 @@ export class ChooseSecurityLevelComponent implements OnInit {
       selected: false,
     },
     {
+      descriptive: 'opt-seclev-cus',
       headline: 'Custom Security',
       subHeadline: 'Custom',
       description: 'Lorem ipsum dolor sit amet et.',
@@ -36,23 +39,26 @@ export class ChooseSecurityLevelComponent implements OnInit {
 
   constructor(
     private router: Router,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
   /**
-   * Update selected state on selected security level.
-   * @param securityLevel - The clicked / selected security level.
+   * Update state of selected security level.
+   * @param selectedOption - The selected security level.
    */
-  public updateSelection(securityLevel: SecurityLevel) {
-    this.securityLevels.forEach(value => value.selected = false);
-    securityLevel.selected = !securityLevel.selected;
-    const itemIndex = this.securityLevels.findIndex(value => value.headline === securityLevel.headline);
-    this.securityLevels[itemIndex] = securityLevel;
-    this.securityLevels.forEach(value =>
-      console.log(value.headline, value.selected)
-    );
+  public updateSelection(selectedOption: Selectable) {
+    selectedOption.selected = true;
+    this.securityLevels = this.securityLevels.map(x => {
+      x.selected = false;
+      if (x.descriptive !== selectedOption.descriptive) {
+        return x;
+      }
+      x.selected = true;
+      return x;
+    });
   }
 
   /**
