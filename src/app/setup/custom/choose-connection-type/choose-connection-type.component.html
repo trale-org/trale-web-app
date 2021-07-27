@@ -1,0 +1,50 @@
+<div class="container"
+     style="background-color: var(--background-color); min-height: 100vh;"
+
+>
+
+  <div class="row">
+    <div class="col-sm-12" style="margin-top: 20px;">
+      <span class="setup-headline">Custom security settings</span>
+    </div>
+    <div class="col-sm-12" style="margin-top: 20px;">
+      <span class="setup-headline-small">
+        Data Transfer & Server Connections
+      </span>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-sm-12"
+         style="margin-top: 20px;"
+    ><!-- SPACER --></div>
+
+    <app-selection-item
+      *ngFor="let connectionType of connectionTypes"
+      [selectable]="connectionType"
+      (onOptionSelected)="updateSelection($event)"
+    ></app-selection-item>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 d-flex justify-content-center">
+      <button class="trale-btn"
+              style="margin-right: 10px;"
+              (click)="navigatePreviousStep()"
+      >
+        <-
+      </button>
+      <button class="trale-btn-accent"
+              style="margin-left: 10px;"
+              (click)="navigateNextStep()"
+              [disabled]="!selectedConnectionType"
+      >
+        ->
+      </button>
+    </div>
+  </div>
+
+</div>
