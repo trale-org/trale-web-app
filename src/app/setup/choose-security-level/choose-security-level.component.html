@@ -32,9 +32,10 @@
       >
         <-
       </button>
-      <!-- TODO add navigation function name if next step is known -->
       <button class="trale-btn-accent"
               style="margin-left: 10px;"
+              (click)="navigateNextStep()"
+              [disabled]="!selectedSecurityLevel"
       >
         ->
       </button>
